@@ -52,12 +52,12 @@ class InfixExpressionTest {
 
     @Test
     public void shuntingYardToValue(){
-        InfixExpression n = new InfixExpression("12+1*(2*3+4)");
+        InfixExpression n = new InfixExpression("10*(5*2*1)");
         double[] ax = n.fillNumberArr(n.getInfix().toCharArray());
         String conv = n.infixConverter();
         String x = n.shuntingYardAlgo(conv);
         double res = n.shuntingYardToValue(x, ax);
-        assertEquals(22, res);
+        assertEquals(100, res);
     }
 
 }
